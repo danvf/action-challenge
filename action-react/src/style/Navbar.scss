@@ -1,0 +1,85 @@
+@import "Colors";
+@import "Fonts";
+
+$tab-highlight: 70px;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+
+    .tab-box {
+        width: 120px;
+        height: 100%;
+
+        .icon-btn {
+            margin: 10px;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+
+            .icon-img {
+                transition: all 0.2s ease-out;
+                position: relative;
+                z-index: 1;
+                font-size: 24px;
+                line-height: $tab-highlight;
+                color: $nav-title-h;
+            }
+            &:before {
+                transition: all 0.2s ease-out;
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                margin: 0 auto;
+                top: $tab-highlight / 2;
+                left: 0;
+                right: 0;
+                border-radius: 100%;
+                background: $nav-gradient;
+            }
+            .title {
+                transition: all 0.2s ease-out;
+                color: $nav-title;
+                font-size: 14px;
+                font-weight: $regular;
+            }
+            &:hover {
+                &:before {
+                    top: $tab-highlight * 0.1;
+                    width: $tab-highlight * 0.8;
+                    height: $tab-highlight * 0.8;
+                    line-height: $tab-highlight * 0.8;
+                }
+                .icon-img {
+                    color: $nav-icon-h;
+                }
+                .title {
+                    color: $nav-title-h;
+                    margin: 7px 0;
+                }
+            }
+            &.active {
+                .icon-img {
+                    color: $nav-icon-h;
+                }
+                &:before {
+                    top: 0;
+                    width: $tab-highlight;
+                    height: $tab-highlight;
+                    line-height: $tab-highlight;
+                    background: $nav-gradient;
+                }
+                .title {
+                    background: $nav-gradient;
+                    @include apply-gradient;
+                    font-weight: $semi-bold;
+                    margin: 12px 0;
+                }
+            }
+        }
+    }
+}

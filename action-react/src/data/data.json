@@ -1,0 +1,50 @@
+{
+    "client": {
+        "courses": [{}]
+    },
+    "moodar": {
+        "categories": [
+            "Gestão de Tempo",
+            "Inteligência Emocional",
+            "Liderança"
+        ],
+        "courses": [
+            {
+                "id": 1,
+                "title": "Gestão e Liderança",
+                "description": "A natureza e o exercício da liderança têm sido foco de pesquisas do homem ao longo da sua história. O estudo da história tem sido o estudo dos líderes - o quê e porquê eles fizeram o que fizeram. É a habilidade de motivar e influenciar os liderados, de forma ética e positiva, para que contribuam voluntariamente e com entusiasmo para alcançarem os objetivos da equipe e da organização. Assim, o líder diferencia-se do chefe, que é aquela pessoa encarregada por uma tarefa ou atividade de uma organização e que, para tal, comanda um grupo de pessoas, tendo autoridade de mandar e exigir obediência.",
+                "category": "Liderança",
+                "duration": "2 horas",
+                "photoURL": "https://s3.amazonaws.com/kp-blog/wp-content/uploads/2019/04/24092608/o-que-e-lideranca-lideranca-moderna-1024x727.jpg",
+                "audience": 100
+            },
+            {
+                "id": 2,
+                "title": "Inteligência Emocional por Parábolas",
+                "description": "Parábolas ou Fábulas são histórias que trazem grandes reflexões. Nesse curso iremos trazer de forma animada, as mais belas parábolas e/ou fábulas com sucinto debate sobre os possíveis aprendizados sobre as mesmas. Venha fazer parte de um grupo seleto de pessoas que buscam a evolução pessoal no sentido mais amplo pela dedicação de tempo em estudar e conhecer histórias de grandes pensadores, que trazem grandes reflexões de vida.",
+                "category": "Inteligência Emocional",
+                "duration": "4 horas",
+                "photoURL": "https://lh3.googleusercontent.com/proxy/2376oxuuXIo-2m0W1vFSepPoXFGHzuVSMnqJThSl6jZ3m7Ph4ulvyzWwlw_MlqavMfR1WpiPHlNdG70VlXmhSShP687bdRD5VN_zFQMq9wgd3Qvc3xqmDuxPZ80fkZyGt5E",
+                "audience": 40
+            },
+            {
+                "id": 3,
+                "title": "Inteligência Emocional para Superação de Desafios",
+                "description": "Este curso é uma abordagem prática sobre como superar desafios. Apresentado por Igor Medeiros, que venceu a morte em 2012, quando descobriu um tumor de 7cm na cabeça. Além de um método testado e aprovado na prática por Igor Medeiros e seus alunos, você terá uma relação direta com os pilares da inteligência emocional, popularizada em 1995 com o livro de Daniel Goleman. Para complementar e se aproximar da experiência do autor, você aprenderá práticas simples de meditação, especialmente a Mindfulness, por meio de áudios guiados, para que sua visão da vida fique mais clara e comportamentos nocivos venham a luz da consciência, para serem corrigidos e liberar o seu caminho rumo a realização os seus objetivos.",
+                "category": "Inteligência Emocional",
+                "duration": "1 hora",
+                "photoURL": "https://blog.alfacolegio.com.br/wp-content/uploads/2019/04/282885-o-que-e-inteligencia-emocional-saiba-aqui.jpg",
+                "audience": 120
+            },
+            {
+                "id": 4,
+                "title": "Gestão de tempo",
+                "description": "Esse curso vai ajudar você a produzir mais com menos esforço. O curso oferece técnicas comprovadas de organização, controle e definição de prioridades que multiplicarão sua produtividade e seu tempo livre, fazendo com que tenha mais tempo para aproveitar melhor a vida. Além disso, ao se perceber mais eficiente e eficaz, seu nível de estresse irá se reduzir, aumentando assim sua qualidade e expectativa de vida.",
+                "category": "Gestão de Tempo",
+                "duration": "1 hora",
+                "photoURL": "https://www.blbbrasil.com.br/blog/wp-content/uploads/2017/12/01-12-16-gest%C3%A3o-do-tempo.jpg",
+                "audience": 120
+            }
+        ]
+    }
+}
