@@ -5,7 +5,15 @@ import "../style/Store.scss";
 function Store() {
     return (
         <div className="store-box">
-            <Card />
+            <div className="store-grid">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
         </div>
     );
 }

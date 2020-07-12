@@ -30,7 +30,7 @@ function Search() {
                                 className="category-item"
                                 value={categoryCount++}
                             >
-                                {category}
+                                {category.name}
                             </option>
                         ))}
                     </select>

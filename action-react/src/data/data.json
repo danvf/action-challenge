@@ -4,9 +4,18 @@
     },
     "moodar": {
         "categories": [
-            "Gestão de Tempo",
-            "Inteligência Emocional",
-            "Liderança"
+            {
+                "name": "Gestão de Tempo",
+                "color": "#86D3E3"
+            },
+            {
+                "name": "Inteligência Emocional",
+                "color": "#E391B3"
+            },
+            {
+                "name": "Liderança",
+                "color": "#6FE375"
+            }
         ],
         "courses": [
             {

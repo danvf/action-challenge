@@ -13,3 +13,24 @@ $extra-bold: 800;
     background-clip: text;
     color: transparent;
 }
+
+// card fonts
+
+@mixin card-title {
+    font-size: 24px;
+    font-weight: $bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+@mixin card-tag {
+    font-size: 13px;
+    font-weight: $medium;
+    color: #ffffff;
+}
+
+@mixin card-info {
+    font-size: 10px;
+}
