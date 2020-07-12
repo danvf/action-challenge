@@ -1,0 +1,103 @@
+@import "Colors";
+@import "Fonts";
+
+@mixin input-field {
+    border-radius: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    padding: 0 1em;
+    font-size: 14px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+
+    .search-item {
+        margin: 0 4px;
+        height: 70px;
+
+        .grad-border {
+            background: $search-border;
+            border-radius: 30px;
+            padding: 4px;
+
+            .title-input {
+                @include input-field;
+                width: 300px;
+            }
+
+            .category-input {
+                @include input-field;
+
+                .category-input {
+                    border: 0px;
+                }
+                &:first-child {
+                    border-top-left-radius: 30px;
+                    border-top-right-radius: 30px;
+                }
+
+                &:last-child {
+                    border-bottom-left-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                }
+            }
+
+            &:focus-within {
+                background: $search-gradient;
+            }
+        }
+
+        .label {
+            position: relative;
+            left: 1.4em;
+            margin: 4px 0;
+            font-size: 13px;
+            font-weight: $medium;
+        }
+
+        &:focus-within {
+            .label {
+                background: $search-gradient;
+                @include apply-gradient;
+            }
+        }
+
+        i {
+            transition: all 0.2s ease;
+            margin-top: -4px;
+            margin-left: 16px;
+            cursor: pointer;
+            padding: 12px;
+            background: $search-gradient;
+            @include apply-gradient;
+            border-radius: 50%;
+            font-size: 20px;
+
+            &:focus,
+            &:hover {
+                background: $search-gradient;
+                color: white;
+                transform: translateY(-0.12em);
+            }
+
+            &:active {
+                transform: translateY(0.04em);
+            }
+        }
+
+        .btn-label {
+            position: relative;
+            top: -4px;
+            left: 10px;
+            margin: 4px 0;
+            font-size: 13px;
+            font-weight: $medium;
+        }
+    }
+}

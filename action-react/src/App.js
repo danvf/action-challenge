@@ -1,25 +1,32 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Store from "./components/Store";
+import User from "./components/User";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from "react-router-dom";
 import "./style/App.scss";
 
 function App() {
-    return;
-    <div>
-        <Router>
-            <Navbar />
-            <Search />
-            <Route
-                path="/any_path_name_you_want"
-                component={imported_component}
-            />
-            <Route
-                path="/any_path_name_you_want"
-                component={imported_component}
-            />
-        </Router>
-    </div>;
+    return (
+        <div className="app">
+            <Router>
+                <Navbar />
+                <Search />
+                <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/store" />
+                    </Route>
+                    <Route path="/user" component={User} />
+                    <Route path="/store" component={Store} />
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

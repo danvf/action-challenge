@@ -1,0 +1,21 @@
+@import "Colors";
+@import "Fonts";
+
+.store-box {
+    display: flex;
+    justify-content: center;
+
+    .store-grid {
+        display: grid;
+        grid-template-columns: 500px 500px 500px;
+        height: 500px;
+        margin-bottom: 108px;
+
+        .card {
+            border: 1px solid black;
+            margin: 10px;
+            width: 260px;
+            height: 260px;
+        }
+    }
+}

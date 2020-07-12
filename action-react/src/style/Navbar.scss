@@ -4,6 +4,7 @@
 $tab-highlight: 70px;
 
 .navbar {
+    background: $nav-background;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +15,9 @@ $tab-highlight: 70px;
         width: 120px;
         height: 100%;
 
+        .no-style {
+            text-decoration: none;
+        }
         .icon-btn {
             margin: 10px;
             position: relative;
