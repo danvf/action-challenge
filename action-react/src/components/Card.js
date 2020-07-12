@@ -1,29 +1,23 @@
 import React from "react";
 import "../style/Card.scss";
 
-function Card() {
+function Card(props) {
+    // props: id, title, image, category
     return (
         <div className="card-box">
             <div className="img-wrap">
-                <img
-                    className="card-bg"
-                    src="https://s3.amazonaws.com/kp-blog/wp-content/uploads/2019/04/24092608/o-que-e-lideranca-lideranca-moderna-1024x727.jpg"
-                />
+                <img className="card-bg" src={props.image} />
                 <svg className="card-svg" viewBox="0 0 280 52">
                     <path
                         fill="#ffffff"
-                        fill-opacity="1"
                         d="M 0 100 L 0 40 Q 100 0 180 40 Q 240 60 280 40 L 280 100 Z"
                     ></path>
                 </svg>
             </div>
             <div className="details-box">
-                <p className="card-title">
-                    {" "}
-                    Title of the Course, sometimes Large, just too much{" "}
-                </p>
+                <p className="card-title"> {props.title} </p>
                 <div className="card-footer">
-                    <div className="category"> categoria </div>
+                    <div className="category"> {props.category} </div>
                     <p className="info"> clique para saber mais </p>
                 </div>
             </div>

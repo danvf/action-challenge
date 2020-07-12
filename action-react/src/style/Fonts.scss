@@ -23,6 +23,7 @@ $extra-bold: 800;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: #000000;
 }
 
 @mixin card-tag {
@@ -33,4 +34,5 @@ $extra-bold: 800;
 
 @mixin card-info {
     font-size: 10px;
+    color: #000000;
 }

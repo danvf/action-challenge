@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Search from "./components/Search";
 import Store from "./components/Store";
 import User from "./components/User";
 import {
@@ -16,13 +15,13 @@ function App() {
         <div className="app">
             <Router>
                 <Navbar />
-                <Search />
                 <Switch>
                     <Route exact path="/">
                         <Redirect to="/store" />
                     </Route>
                     <Route path="/user" component={User} />
                     <Route path="/store" component={Store} />
+                    <Route path="/store/:id"
                 </Switch>
             </Router>
         </div>
