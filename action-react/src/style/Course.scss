@@ -63,9 +63,57 @@
     }
 
     .course-numbers {
+        margin-top: 10px;
+        width: 50%;
+        max-width: 480px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
+
+        .info-box {
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100px;
+
+            i {
+                font-size: 28px;
+                margin: 8px;
+                color: #aaaaaa;
+            }
+
+            .number {
+                font-size: 24px;
+                font-weight: $medium;
+            }
+
+            .description {
+                margin-left: 20px;
+                width: 100px;
+                font-weight: $light;
+            }
+        }
+
+        .alt-info {
+            width: 200px;
+
+            .category {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 44px;
+                font-weight: $semi-bold;
+            }
+
+            .description {
+                width: 200px;
+                margin-left: 0px;
+                text-align: center;
+            }
+        }
     }
 
     .course-description {

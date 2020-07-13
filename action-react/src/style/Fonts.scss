@@ -55,3 +55,11 @@ $extra-bold: 800;
     font-weight: $light;
     color: #000000;
 }
+
+// banner fonts
+
+@mixin banner-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000000;
+}

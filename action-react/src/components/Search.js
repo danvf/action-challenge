@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import "../style/Search.scss";
 
-function Search() {
-    const [titleInput, setTitleInput] = useState("");
-    const [categoryInput, setCategoryInput] = useState("Todas");
+function Search({
+    titleInput,
+    categoryInput,
+    handleTitleInput,
+    handleCategoryInput,
+    handleSearch,
+}) {
     const categories = useSelector((state) => state.categories);
+
     return (
         <div className="search">
             <div className="search-item">
@@ -20,10 +25,7 @@ function Search() {
                         placeholder="Buscar Ações..."
                         maxLength="50"
                         value={titleInput}
-                        onChange={(e) => {
-                            setTitleInput(e.target.value);
-                            console.log(titleInput);
-                        }}
+                        onChange={handleTitleInput}
                     ></input>
                 </div>
                 <div className="label"> título </div>
@@ -38,10 +40,7 @@ function Search() {
                     <select
                         className="category-input"
                         value={categoryInput}
-                        onChange={(e) => {
-                            setCategoryInput(e.target.value);
-                            console.log(categoryInput);
-                        }}
+                        onChange={handleCategoryInput}
                     >
                         <option className="category-item" value="Todas">
                             Todas
@@ -59,7 +58,7 @@ function Search() {
                 <div className="label"> categoria </div>
             </div>
             <div className="search-item">
-                <i className="fas fa-search"></i>
+                <i onClick={handleSearch} className="fas fa-search"></i>
                 <div className="btn-label"> pesquisar </div>
             </div>
         </div>

@@ -18,7 +18,22 @@ function Course({ match }) {
             </div>
             <div className="course-title"> {course.title} </div>
             <div className="course-divider" />
-            <div className="course-numbers"> </div>
+            <div className="course-numbers">
+                <div className="info-box">
+                    <i className="fas fa-clock"></i>
+                    <p className="number"> {course.duration} </p>
+                    <p className="description"> duração </p>
+                </div>
+                <div className="info-box alt-info">
+                    <div className="category"> {course.category} </div>
+                    <p className="description"> categoria </p>
+                </div>
+                <div className="info-box">
+                    <i className="fas fa-users"></i>
+                    <p className="number"> {course.audience} </p>
+                    <p className="description"> audiência </p>
+                </div>
+            </div>
             <div className="course-description"> {course.description} </div>
             <div className="course-btns">
                 <button className="confirm-btn"> Solicitar Ação </button>
