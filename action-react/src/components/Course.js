@@ -1,11 +1,38 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import "../style/Course.scss";
 
-function Course() {
+function Course({ match }) {
+    const courses = useSelector((state) => state.moodarCourses);
+    const id = match.params.id;
+    const course = findCourse(id, courses);
+
     return (
-        <div>
-            <h1> Course </h1>
+        <div className="course-box">
+            <div
+                className="course-bg"
+                style={{ backgroundImage: "url(" + course.photoURL + ")" }}
+            >
+                <div className="bg-filter" />
+            </div>
+            <div className="course-title"> {course.title} </div>
+            <div className="course-divider" />
+            <div className="course-numbers"> </div>
+            <div className="course-description"> {course.description} </div>
+            <div className="course-btns">
+                <button className="confirm-btn"> Solicitar Ação </button>
+                <Link to={"/store"}>
+                    <button className="cancel-btn"> Voltar </button>
+                </Link>
+            </div>
         </div>
     );
+}
+
+function findCourse(id, courses) {
+    let obj = courses.find((c) => String(c.id) === String(id));
+    return obj;
 }
 
 export default Course;

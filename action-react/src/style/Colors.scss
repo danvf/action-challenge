@@ -32,9 +32,23 @@ $scroll-gradient: linear-gradient(
 $scroll-color: #dddddd;
 
 // Card colors
+$card-shadow: rgba(0, 0, 0, 0.2);
 $card-color: #ffffff;
 $card-gradient: linear-gradient(
     90deg,
     rgba(229, 30, 73, 1) 0%,
     rgba(45, 155, 226, 1) 100%
+);
+
+// Course colors
+$course-gradient: linear-gradient(
+    90deg,
+    rgba(229, 30, 73, 1) 0%,
+    rgba(45, 155, 226, 1) 100%
+);
+$course-btn-gradient: linear-gradient(
+    to left,
+    rgba(229, 30, 73, 1),
+    rgba(45, 155, 226, 1),
+    rgba(229, 30, 73, 1)
 );

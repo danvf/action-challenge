@@ -31,6 +31,12 @@
                 width: 300px;
             }
 
+            @media (max-width: 670px) {
+                .title-input {
+                    width: 250px;
+                }
+            }
+
             .category-input {
                 @include input-field;
 
@@ -51,6 +57,10 @@
             &:focus-within {
                 background: $search-gradient;
             }
+        }
+
+        .active {
+            background: $search-gradient;
         }
 
         .label {
@@ -99,5 +109,13 @@
             font-size: 13px;
             font-weight: $medium;
         }
+    }
+}
+
+@media (max-width: 670px) {
+    .search {
+        margin: auto;
+        max-width: 500px;
+        min-width: 200px;
     }
 }

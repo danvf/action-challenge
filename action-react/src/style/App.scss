@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
 @import "Colors";
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
@@ -13,6 +17,7 @@ p {
 
 body::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 
 body::-webkit-scrollbar-track {

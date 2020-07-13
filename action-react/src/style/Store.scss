@@ -9,6 +9,19 @@
 
     .store-grid {
         display: grid;
+        justify-items: center;
         grid-template-columns: 300px 300px 300px;
+    }
+
+    @media (max-width: 935px) {
+        .store-grid {
+            grid-template-columns: 300px 300px;
+        }
+    }
+
+    @media (max-width: 630px) {
+        .store-grid {
+            grid-template-columns: 300px !important;
+        }
     }
 }
