@@ -21,7 +21,7 @@ function Search({
             <div className="search-item">
                 <div
                     className={
-                        "grad-border " + (titleInput != "" ? "active" : "")
+                        "grad-border " + (titleInput !== "" ? "active" : "")
                     }
                 >
                     <input
@@ -41,7 +41,7 @@ function Search({
                 <div
                     className={
                         "grad-border " +
-                        (categoryInput != "Todas" ? "active" : "")
+                        (categoryInput !== "Todas" ? "active" : "")
                     }
                 >
                     <select

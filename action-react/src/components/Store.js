@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Card from "./Card";
+import Empty from "./Empty";
 import Search from "./Search";
 import "../style/Store.scss";
 
@@ -33,6 +34,8 @@ function Store() {
 
     const courses = useSelector((state) => state.moodarCourses);
     const [queryResults, setQueryResults] = useState(courses);
+    const isEmpty =
+        typeof queryResults === "undefined" || queryResults.length === 0;
 
     return (
         <div>
@@ -50,15 +53,19 @@ function Store() {
 
             <div className="store-box">
                 <div className="store-grid">
-                    {queryResults.map((course) => (
-                        <Card
-                            key={course.id}
-                            id={course.id}
-                            title={course.title}
-                            image={course.photoURL}
-                            category={course.category}
-                        />
-                    ))}
+                    {isEmpty ? (
+                        <Empty details="b" />
+                    ) : (
+                        queryResults.map((course) => (
+                            <Card
+                                key={course.id}
+                                id={course.id}
+                                title={course.title}
+                                image={course.photoURL}
+                                category={course.category}
+                            />
+                        ))
+                    )}
                 </div>
             </div>
         </div>

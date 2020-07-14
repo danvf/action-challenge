@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Dialog from "./Dialog";
 import "../style/Course.scss";
 
 function Course({ match }) {
+    const [openDialog, setOpenDialog] = useState(false);
+    const handleSolicitation = () => {
+        setOpenDialog(true);
+    };
     const courses = useSelector((state) => state.moodarCourses);
     const id = match.params.id;
     const course = findCourse(id, courses);
 
     return (
         <div className="course-box">
+            {openDialog && <Dialog />}
             <div
                 className="course-bg"
                 style={{ backgroundImage: "url(" + course.photoURL + ")" }}
@@ -36,7 +42,9 @@ function Course({ match }) {
             </div>
             <div className="course-description"> {course.description} </div>
             <div className="course-btns">
-                <button className="confirm-btn"> Solicitar Ação </button>
+                <button onClick={handleSolicitation} className="confirm-btn">
+                    Solicitar Ação
+                </button>
                 <Link to={"/store"}>
                     <button className="cancel-btn"> Voltar </button>
                 </Link>
