@@ -101,6 +101,14 @@
             }
         }
 
+        @media (max-width: 640px) {
+            i {
+                background: $search-gradient;
+                color: white;
+                transform: translateY(-0.12em);
+            }
+        }
+
         .btn-label {
             position: relative;
             top: -4px;

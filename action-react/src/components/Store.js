@@ -19,8 +19,9 @@ function Store() {
         let results = courses.filter((course) =>
             course.title.toLowerCase().includes(titleInput.toLowerCase())
         );
+
         if (categoryInput !== "Todas") {
-            results = courses.filter((course) =>
+            results = results.filter((course) =>
                 course.category
                     .toLowerCase()
                     .includes(categoryInput.toLowerCase())

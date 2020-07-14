@@ -10,6 +10,11 @@ function Search({
     handleSearch,
 }) {
     const categories = useSelector((state) => state.categories);
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            handleSearch();
+        }
+    };
 
     return (
         <div className="search">
@@ -20,12 +25,14 @@ function Search({
                     }
                 >
                     <input
+                        tabIndex="3"
                         className="title-input"
                         type="text"
                         placeholder="Buscar Ações..."
                         maxLength="50"
                         value={titleInput}
                         onChange={handleTitleInput}
+                        onKeyDown={handleKeyDown}
                     ></input>
                 </div>
                 <div className="label"> título </div>
@@ -38,9 +45,11 @@ function Search({
                     }
                 >
                     <select
+                        tabIndex="4"
                         className="category-input"
                         value={categoryInput}
                         onChange={handleCategoryInput}
+                        onKeyDown={handleKeyDown}
                     >
                         <option className="category-item" value="Todas">
                             Todas
@@ -58,7 +67,11 @@ function Search({
                 <div className="label"> categoria </div>
             </div>
             <div className="search-item">
-                <i onClick={handleSearch} className="fas fa-search"></i>
+                <i
+                    tabIndex="5"
+                    onClick={handleSearch}
+                    className="fas fa-search"
+                ></i>
                 <div className="btn-label"> pesquisar </div>
             </div>
         </div>

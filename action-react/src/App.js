@@ -11,6 +11,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import "./style/App.scss";
+import Empty from "./components/Empty";
 
 function App() {
     return (
@@ -22,7 +23,7 @@ function App() {
                     <Route exact path="/">
                         <Redirect to="/store" />
                     </Route>
-                    <Route path="/user" component={User} />
+                    <Route path="/user" component={Empty} />
                     <Route exact path="/store" component={Store} />
                     <Route path="/store/:id" component={Course} />
                 </Switch>
