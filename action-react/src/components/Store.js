@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Card from "./Card";
 import Search from "./Search";
@@ -30,9 +30,8 @@ function Store() {
         setQueryResults(results);
     };
 
-    const [queryResults, setQueryResults] = useState([{}]);
-
     const courses = useSelector((state) => state.moodarCourses);
+    const [queryResults, setQueryResults] = useState(courses);
 
     return (
         <div>
