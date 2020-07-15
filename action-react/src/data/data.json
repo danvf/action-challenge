@@ -1,23 +1,7 @@
 {
-    "client": {
-        "courses": [{}]
-    },
-    "moodar": {
-        "categories": [
-            {
-                "name": "Gestão de Tempo",
-                "color": "#86D3E3"
-            },
-            {
-                "name": "Inteligência Emocional",
-                "color": "#E391B3"
-            },
-            {
-                "name": "Liderança",
-                "color": "#6FE375"
-            }
-        ],
-        "courses": [
+    "courses": {
+        "client": [],
+        "moodar": [
             {
                 "id": 1,
                 "title": "Gestão e Liderança",
@@ -55,5 +39,19 @@
                 "audience": 120
             }
         ]
-    }
+    },
+    "categories": [
+        {
+            "id": 1,
+            "name": "Gestão de Tempo"
+        },
+        {
+            "id": 2,
+            "name": "Inteligência Emocional"
+        },
+        {
+            "id": 3,
+            "name": "Liderança"
+        }
+    ]
 }

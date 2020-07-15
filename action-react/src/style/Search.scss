@@ -78,7 +78,7 @@
             }
         }
 
-        i {
+        .search-btn {
             transition: all 0.2s ease;
             margin-top: -4px;
             margin-left: 16px;
@@ -86,6 +86,7 @@
             padding: 12px;
             background: $search-gradient;
             @include apply-gradient;
+            @include apply-float;
             border-radius: 50%;
             font-size: 20px;
 
@@ -102,7 +103,7 @@
         }
 
         @media (max-width: 640px) {
-            i {
+            .search-btn {
                 background: $search-gradient;
                 color: white;
                 transform: translateY(-0.12em);

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "./Card";
 import Empty from "./Empty";
 import Search from "./Search";
 import "../style/Store.scss";
+import Dialog from "./Dialog";
 
 function Store() {
+    const courses = useSelector((state) => state.courses.moodar);
+
+    useEffect(() => {}, [courses]);
+
     const [titleInput, setTitleInput] = useState("");
     const handleTitleInput = (event) => {
         setTitleInput(event.target.value);
@@ -15,6 +20,10 @@ function Store() {
     const handleCategoryInput = (event) => {
         setCategoryInput(event.target.value);
     };
+
+    const [queryResults, setQueryResults] = useState(courses);
+    const isEmpty =
+        typeof queryResults === "undefined" || queryResults.length === 0;
 
     const handleSearch = (event) => {
         let results = courses.filter((course) =>
@@ -32,13 +41,11 @@ function Store() {
         setQueryResults(results);
     };
 
-    const courses = useSelector((state) => state.moodarCourses);
-    const [queryResults, setQueryResults] = useState(courses);
-    const isEmpty =
-        typeof queryResults === "undefined" || queryResults.length === 0;
+    const openDialog = useSelector((state) => state.dialog);
 
     return (
         <div>
+            {openDialog && <Dialog />}
             <Search
                 titleInput={titleInput}
                 categoryInput={categoryInput}
@@ -52,11 +59,11 @@ function Store() {
             </div>
 
             <div className="store-box">
-                <div className="store-grid">
-                    {isEmpty ? (
-                        <Empty details="b" />
-                    ) : (
-                        queryResults.map((course) => (
+                {isEmpty ? (
+                    <Empty details="b" />
+                ) : (
+                    <div className="store-grid">
+                        {queryResults.map((course) => (
                             <Card
                                 key={course.id}
                                 id={course.id}
@@ -64,9 +71,9 @@ function Store() {
                                 image={course.photoURL}
                                 category={course.category}
                             />
-                        ))
-                    )}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

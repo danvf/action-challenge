@@ -8,7 +8,11 @@ function Card(props) {
         <div className="card-box">
             <Link style={{ textDecoration: "none" }} to={`/store/${props.id}`}>
                 <div className="img-wrap">
-                    <img className="card-bg" src={props.image} />
+                    <img
+                        className="card-bg"
+                        alt="Imagem representando tema da ação"
+                        src={props.image}
+                    />
                     <svg className="card-svg" viewBox="0 0 280 52">
                         <path
                             fill="#ffffff"

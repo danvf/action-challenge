@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import userCoursesReducer from "./userCoursesReducer";
-import moodarCoursesReducer from "./moodarCoursesReducer";
+import coursesReducer from "./coursesReducer";
 import categoriesReducer from "./categoriesReducer";
+import dialogReducer from "./dialogReducer";
 
 export default combineReducers({
-    clientCourses: userCoursesReducer,
-    moodarCourses: moodarCoursesReducer,
+    courses: coursesReducer,
+    dialog: dialogReducer,
     categories: categoriesReducer,
 });

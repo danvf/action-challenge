@@ -56,6 +56,7 @@ function Search({
                         </option>
                         {categories.map((category) => (
                             <option
+                                key={category.id}
                                 className="category-item"
                                 value={category.name}
                             >
@@ -68,9 +69,8 @@ function Search({
             </div>
             <div className="search-item">
                 <i
-                    tabIndex="5"
                     onClick={handleSearch}
-                    className="fas fa-search"
+                    className="fas fa-search search-btn"
                 ></i>
                 <div className="btn-label"> pesquisar </div>
             </div>

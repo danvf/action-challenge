@@ -1,0 +1,34 @@
+@import "Colors";
+@import "Fonts";
+
+.user-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+
+    .banner-title {
+        @include banner-title;
+        margin-bottom: 20px;
+    }
+
+    .banner-divider {
+        width: 50%;
+        max-width: 500px;
+        min-width: 200px;
+        height: 2px;
+        background: $course-gradient;
+    }
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 325px;
+    margin: 0px 20px 20px 20px;
+    margin-bottom: 108px;
+}

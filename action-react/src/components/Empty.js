@@ -4,7 +4,7 @@ import "../style/Empty.scss";
 function Empty(props) {
     const detailsA =
         "(Você pode procurar por ações disponíveis para solicitação na Moodar Store)";
-    const detailsB = "(Não existem mais ações disponíveis para solicitação)";
+    const detailsB = "(Não existem ações disponíveis para solicitação)";
 
     return (
         <div className="empty-box">

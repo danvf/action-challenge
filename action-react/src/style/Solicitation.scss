@@ -1,0 +1,148 @@
+@import "Colors";
+@import "Fonts";
+
+.sol-box {
+    cursor: pointer;
+    align-self: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 20px;
+    padding: 20px 30px;
+    background: $card-color;
+    border-radius: 30px;
+    box-shadow: 0px 0px 8px 0px $card-shadow;
+    transition: all 0.2s ease;
+
+    .sol-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 21px;
+    }
+
+    .sol-divider {
+        margin: auto;
+        width: 50%;
+        max-width: 500px;
+        min-width: 200px;
+        margin-bottom: 24px;
+        height: 2px;
+        background: $course-gradient;
+    }
+
+    .sol-spec {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 6px;
+
+        .title {
+            @include sol-title;
+            margin-right: 10px;
+        }
+
+        .content {
+            @include sol-content;
+        }
+
+        .desc-content {
+            @include sol-content;
+            height: 75px;
+            overflow: hidden;
+        }
+
+        .expand {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+
+    &:focus,
+    &:hover {
+        transform: translateY(-0.2em);
+    }
+
+    .img-wrap {
+        position: relative;
+
+        .gradient {
+            position: absolute;
+            z-index: 1;
+            bottom: 66px;
+            background: $see-more-gradient;
+            width: 100%;
+            height: 100px;
+        }
+
+        .cancel-sol-box {
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+            vertical-align: middle;
+
+            .cancel-sol-btn {
+                @include apply-float;
+                transition: all 0.2s ease;
+                background: #ffffff;
+                color: rgba(229, 30, 73, 1);
+                cursor: pointer;
+                margin: 10px 20px;
+                border: none;
+                border-radius: 30px;
+                padding: 1em;
+                font-size: 14px;
+
+                &:hover {
+                    transform: translateY(-0.2em);
+                    background: rgba(229, 30, 73, 1);
+                    color: #ffffff;
+                }
+
+                &:active {
+                    transform: translateY(0.08em);
+                }
+            }
+        }
+
+        .see-more-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .see-more-btn {
+                cursor: pointer;
+                text-align: center;
+                width: 21px;
+                align-self: center;
+                transition: all 0.2s ease;
+                padding: 12px;
+                background: $search-gradient;
+                @include apply-gradient;
+                border-radius: 50%;
+                font-size: 20px;
+
+                &:focus,
+                &:hover {
+                    transform: translateY(-0.06em);
+                    background: $search-gradient;
+                    color: white;
+                }
+
+                &:active {
+                    transform: translateY(0.02em);
+                }
+            }
+
+            .btn-label {
+                margin-top: 2px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: $medium;
+            }
+        }
+    }
+}

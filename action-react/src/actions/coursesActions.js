@@ -1,15 +1,15 @@
 import { CONSTANTS } from "../actions";
 
-export const addCourse = () => {
+export const addCourse = (courseId) => {
     return {
         type: CONSTANTS.ADD_COURSE,
-        payload: {},
+        payload: { courseId },
     };
 };
 
-export const removeCourse = () => {
+export const removeCourse = (courseId) => {
     return {
         type: CONSTANTS.REMOVE_COURSE,
-        payload: {},
+        payload: { courseId },
     };
 };

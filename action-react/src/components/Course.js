@@ -1,21 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import { addCourse, openDialog } from "../actions";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Dialog from "./Dialog";
 import "../style/Course.scss";
 
 function Course({ match }) {
-    const [openDialog, setOpenDialog] = useState(false);
-    const handleSolicitation = () => {
-        setOpenDialog(true);
-    };
-    const courses = useSelector((state) => state.moodarCourses);
+    const courses = useSelector((state) => state.courses.moodar);
     const id = match.params.id;
+    const dispatch = useDispatch();
+
+    const handleAddSolicitation = () => {
+        dispatch(addCourse(id));
+        dispatch(openDialog());
+    };
+
+    const findCourse = (id, courses) => {
+        let obj = courses.find((c) => String(c.id) === String(id));
+        return obj;
+    };
+
     const course = findCourse(id, courses);
 
     return (
         <div className="course-box">
-            {openDialog && <Dialog />}
             <div
                 className="course-bg"
                 style={{ backgroundImage: "url(" + course.photoURL + ")" }}
@@ -42,20 +50,18 @@ function Course({ match }) {
             </div>
             <div className="course-description"> {course.description} </div>
             <div className="course-btns">
-                <button onClick={handleSolicitation} className="confirm-btn">
-                    Solicitar Ação
-                </button>
                 <Link to={"/store"}>
+                    <button
+                        onClick={handleAddSolicitation}
+                        className="confirm-btn"
+                    >
+                        Solicitar Ação
+                    </button>
                     <button className="cancel-btn"> Voltar </button>
                 </Link>
             </div>
         </div>
     );
-}
-
-function findCourse(id, courses) {
-    let obj = courses.find((c) => String(c.id) === String(id));
-    return obj;
 }
 
 export default Course;

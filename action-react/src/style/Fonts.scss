@@ -59,7 +59,21 @@ $extra-bold: 800;
 // banner fonts
 
 @mixin banner-title {
+    text-align: center;
     font-size: 50px;
     font-weight: bold;
     color: #000000;
+}
+
+// solicitation fonts
+
+@mixin sol-title {
+    text-align: left;
+    font-size: 16px;
+    font-weight: $semi-bold;
+}
+
+@mixin sol-content {
+    text-align: justify;
+    font-weight: $light;
 }
