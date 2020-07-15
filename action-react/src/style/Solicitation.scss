@@ -60,6 +60,16 @@
         }
     }
 
+    @media (max-width: 640px) {
+        .details {
+            flex-direction: column;
+
+            .desc-content {
+                margin-top: 4px;
+            }
+        }
+    }
+
     &:focus,
     &:hover {
         transform: translateY(-0.2em);

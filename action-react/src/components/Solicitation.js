@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { removeCourse } from "../actions";
-import { useDispatch } from "react-redux";
-import "../style/Solicitation.scss";
+import React, { useState, useRef } from "react";
+import useOutsideClick from "../util/UseOutsideClick";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { removeCourse } from "../actions";
+import "../style/Solicitation.scss";
 
 function Solicitation(props) {
     // props: id, title, category, audience, duration, description
@@ -11,13 +12,18 @@ function Solicitation(props) {
         setSeeMore(!seeMore);
     };
 
+    const ref = useRef();
+    useOutsideClick(ref, () => {
+        setSeeMore(false);
+    });
+
     const dispatch = useDispatch();
     const handleCancelSolicitation = () => {
         dispatch(removeCourse(props.id));
     };
 
     return (
-        <div className="sol-box">
+        <div ref={ref} className="sol-box">
             <div className="sol-title"> {props.title} </div>
             <div className="sol-divider" />
             <div className="sol-spec">
@@ -32,7 +38,7 @@ function Solicitation(props) {
                 <div className="title"> Categoria: </div>
                 <div className="content"> {props.category} </div>
             </div>
-            <div className="sol-spec">
+            <div className="sol-spec details">
                 <div className="title"> Descrição: </div>
                 <div className={"desc-content " + (seeMore ? "expand" : "")}>
                     {props.description}

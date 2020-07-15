@@ -39,7 +39,6 @@ const coursesReducer = (state = data.courses, action) => {
                 client: clientCourses,
                 moodar: moodarCourses,
             };
-            console.log(newState);
             return newState;
         default:
             return state;
